@@ -38,5 +38,3 @@ else:
         print(str(inst) + " instance of " + sing_char + " found in " + five_char_word)
     else: 
         print(str(inst) + " instances of " + sing_char + " found in " + five_char_word)
-
-
