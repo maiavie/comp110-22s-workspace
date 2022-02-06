@@ -1,4 +1,4 @@
-"""Wordle, but the game ends after each guess. """
+"""Wordle, but the game ends after each guess."""
 
 __author__ = "730225263"
 
@@ -28,7 +28,7 @@ while index < len(secret):
     else:
         secret_char: bool = False
         secret_index: int = 0
-        while secret_index < len(secret) and secret_char == False:
+        while secret_index < len(secret) and secret_char is False:
             if secret[secret_index] == guess[index]: 
                 secret_char = True
                 square += YELLOW_BOX
