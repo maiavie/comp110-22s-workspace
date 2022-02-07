@@ -7,7 +7,7 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-secret: str = "python"
+secret: str = "whore alert <3"
 guess: str = input(str(f"Guess a {len(secret)}-letter word. "))
 
 index: int = 0
