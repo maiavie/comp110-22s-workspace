@@ -1,23 +1,26 @@
 """Wordle: The Real Thing!"""
 
-__author__ = 730225263 
+__author__ = "730225263" 
 
+#The variables for the colored boxes used in the game. 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
+#Tying the other functions together to run the game.
 def main() -> None: 
     """The entrypoint of the program and main game loop."""
-    secret: str = "clean"
-    guess = input_guess
+    secret: str = "codes"
+    guess: str
     turn: int = 0
     while turn < 6:
         print(f"~~~ Turn {turn + 1}/6 ~~~")
-        print(emojified(input_guess(len(secret)), secret))
-        if guess == secret:
+        guess = input_guess(len(secret)) #Prompting the user for a guess.
+        print(emojified(guess, secret))  #Color-coded square sequence for guess.
+        if guess == secret: #Ending the game if answer is correct. 
             return print(f"Congratulations! You got today's wordle in {turn + 1}/6 turns. ")
         if guess != secret:
-            turn += 1  
+            turn += 1
     return print(f"X/6- Sorry, that's all the guesses you get. The correct word was {secret}. Try again tomorrow! ")
 
 def contains_char(secret: str, char: str) -> bool: 
@@ -27,7 +30,7 @@ def contains_char(secret: str, char: str) -> bool:
     while i < len(secret):
         if char == secret[i]:
             return True
-        i +=1
+        i += 1
     return False
 
 def emojified(guess: str, secret: str) -> str:
@@ -40,7 +43,7 @@ def emojified(guess: str, secret: str) -> str:
             square += GREEN_BOX
         else:
             if contains_char(secret, guess[i]) == True:
-                square += YELLOW_BOX
+                square += YELLOW_BOX#Utilizing contains_char to determine incorrect spot, right character.
             if contains_char(secret, guess[i]) == False:
                 square += WHITE_BOX
         i += 1 
@@ -53,3 +56,5 @@ def input_guess(length: int) -> str:
         guess: str = input(f"That wasn't {length} characters! Try again: ")
     return guess
 
+if __name__ == "__main__":
+    main()
