@@ -1,4 +1,4 @@
-"""Exercise 5 Functions. """
+"""Exercise 5 Functions."""
 
 __author__ = "730225263"
 
@@ -17,8 +17,8 @@ def only_evens(xs: list[int]) -> list[int]:
 def sub(a_list: list[int], start: int, end: int) -> list[int]: 
     """Given a list and a start and ending point, creates a sub-list."""
     sub_list: list[int] = []
-    if end > len(a_list) - 1:
-        end = len(a_list) - 1
+    if end > len(a_list):
+        end = len(a_list)
     if start < 0:
         start = 0
     if len(a_list) == 0 or start > len(a_list) or end <= 0:
