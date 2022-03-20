@@ -35,8 +35,8 @@ def favorite_color(book: dict[str, str]) -> str:
     if len(colors) > 0:
         fave = colors[n]
     while n < len(colors) - 1:
-        if frequency[colors[n]] > frequency[colors[n + 1]]:
-            fave = colors[n]
+        if frequency[fave] < frequency[colors[n + 1]]:
+            fave = colors[n + 1]
         n += 1 
     return fave
     
@@ -52,5 +52,11 @@ def times(seq: list[str], a: str) -> int:
     return instance
 
 
-# def count(xs: list[str]) -> dict[str, int]:
+def count(xs: list[str]) -> dict[str, int]:
     """Will yield the number of times an item appears in a list."""
+    freq: dict[str, int] = {}
+    i: int = 0
+    while i < len(xs):
+        freq[xs[i]] = times(xs, xs[i])
+        i += 1 
+    return freq

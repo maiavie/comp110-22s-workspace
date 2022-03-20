@@ -3,6 +3,7 @@
 from exercises.ex06.dictionary import invert
 import pytest
 from exercises.ex06.dictionary import favorite_color
+from exercises.ex06.dictionary import count
 
 
 __author__: str = "730225263"
@@ -43,3 +44,21 @@ def test_favorite_color_empty() -> None:
     """Testing if favorite_color will return an empty string given an empty dict."""
     book_empty: dict[str, str] = {}
     assert favorite_color(book_empty) == ""
+
+
+def test_count_empty() -> None:
+    """Testing to see if count will return empty upon given an empty list."""
+    xs_empty: list[str] = list()
+    assert count(xs_empty) == {}
+
+
+def test_count() -> None:
+    """Given a list of str, count will return a dict with the frequency of each item in the list."""
+    animals: list[str] = ['cow', 'pig', 'pig', 'horse', 'cow']
+    assert count(animals) == {'cow': 2, 'pig': 2, 'horse': 1}
+
+
+def test_count_one() -> None:
+    """Given a list with only one item, count will still work."""
+    count_one: list[str] = ['zebra']
+    assert count(count_one) == {'zebra': 1}
